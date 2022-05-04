@@ -44,6 +44,6 @@ Please follow the 'code of conduct' of this project.
 If you have any feedback, please contact us at ugurmercan38@gmail.com.
 
   
-![Logo](https://i.hizliresim.com/j0sz4cf.png)
+![Logo](https://i.hizliresim.com/k7ebs59.png)
 
     
