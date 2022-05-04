@@ -1,0 +1,189 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body{
+	background-color: #191901;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e2e2e;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #2e2e2e;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-track:active {
+  background: #000000;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.container{
+	max-width: 900px;
+	margin: auto auto;
+}
+
+a{
+	text-decoration: none;
+}
+
+.cards{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.card{
+	background-color: #232323;
+	padding: 1rem;
+	box-shadow: 1px 1px 10px #333;
+	border-radius: 14px;
+	transition: .2s linear;
+	width: 500px;
+	height: 650px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.card .image{
+	display: flex;
+	justify-content: center;
+	object-fit: cover;
+}
+
+.card .image img{
+	border-radius: 50%;
+	width: 210px;
+	height: 210px;
+	box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.owner a{
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 0.5rem;
+	display: flex;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.owner a:hover{
+	text-decoration: underline;
+}
+
+.card .name{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 15px;
+}
+
+.music-cards{
+	height: 600px;
+	overflow-y: scroll;
+	padding: 0.5rem;
+}
+
+.music-card{
+	display: flex;
+	justify-content: space-between;
+	padding: 0.7rem;
+	margin-bottom: 1px;
+	cursor: pointer;
+	transition: .1s;
+}
+
+.music-card:hover{
+	background-color: #282828;
+}
+
+.music-card .left{
+	display: flex;
+	align-items: center;
+}
+
+.music-image img{
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.music-name-artist h3{
+	color: #fff;
+}
+
+.music-name-artist h5{
+	color: rgba(255, 255, 255, 0.5);
+	font-weight: 400;
+	font-size: 13px;
+}
+
+.music-name-artist a:hover{
+	text-decoration: underline;
+}
+
+.number{
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.time p{
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 12px;
+}
+
+.description{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 10px;
+	padding: 0.4rem;
+}
+
+.description a{
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.description a:hover{
+	text-decoration: underline;
+}
+
+.description h3{
+	color: rgba(255, 255, 255, 0.5);
+	font-weight: 200;
+	font-size: 12px;
+}
+
+.name h1{
+	color: #fff;
+}
