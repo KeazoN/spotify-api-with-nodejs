@@ -7,7 +7,7 @@
 }
 
 body{
-	background-color: #191901;
+	background: #191414;
 }
 
 ::-webkit-scrollbar {
@@ -61,7 +61,7 @@ a{
 }
 
 .card{
-	background-color: #232323;
+	background: #0a2514s;
 	padding: 1rem;
 	box-shadow: 1px 1px 10px #333;
 	border-radius: 14px;
@@ -83,6 +83,7 @@ a{
 	border-radius: 50%;
 	width: 210px;
 	height: 210px;
+	object-fit: cover;
 	box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
 }
 
@@ -119,6 +120,7 @@ a{
 	padding: 0.7rem;
 	margin-bottom: 1px;
 	cursor: pointer;
+	border-radius: 2px;
 	transition: .1s;
 }
 
@@ -186,4 +188,8 @@ a{
 
 .name h1{
 	color: #fff;
+}
+
+.name.display {
+	margin-top: 0.5rem;
 }
