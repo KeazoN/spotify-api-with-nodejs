@@ -30,7 +30,8 @@ return spotifyApi.getPlaylist('id');
   
 ## ScreenShot
 
-![Screenshot](https://i.hizliresim.com/lx47lgn.jpg)
+![Screenshot](https://i.hizliresim.com/dvqtu6e.jpg)
+![Screenshot](https://i.hizliresim.com/8rmng3b.jpg)
 
   ## Contribution
 
