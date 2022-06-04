@@ -50,7 +50,7 @@ If you have any feedback, please contact us at ugurmercan38@gmail.com.
 
 
 
-## Updates
+# Updates
 
 - A new page has arrived. (user.ejs)
 - By putting the user ID in the variable named Token, you will be able to access all the playlists and information of the user from the "user.ejs" page.
