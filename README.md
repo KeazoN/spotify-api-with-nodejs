@@ -22,8 +22,8 @@ const spotifyApi = new SpotifyWebApi({
 #### Finally
 
 ```javascript
-return spotifyApi.getPlaylist('id');
-//https://open.spotify.com/playlist/id You can get id from
+let token = "id";
+//https://open.spotify.com/user/id You can get id from
 ```
 * Definitely information to be fill.
 
