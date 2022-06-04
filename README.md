@@ -7,7 +7,7 @@ It is made to show anyone's Spotify playlist in any web application.
 
 #### Firstly
  Libraries must be loaded
-```javascript
+```bash
     npm install
 ```
 
