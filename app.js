@@ -4,8 +4,8 @@ const util = require('util');
 const app = express();
 const router = express.Router();
 const spotifyApi = new SpotifyWebApi({
-  clientId: 'a8bd3984f8ae4049a5395f77a0da535c',
-  clientSecret: '47b8428c8bd044eea28c7bf1a47be8a9'
+  clientId: '',
+  clientSecret: ''
 });
 
 app.set('view engine', 'ejs');
