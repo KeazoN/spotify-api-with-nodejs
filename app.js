@@ -19,7 +19,7 @@ app.get('/user', (req, res) => {
 	global.userData;
 	global.playlistData;
 	global.totalData = [];
-	let token = "q34hz9w6r3i1jhxrn5kxk0dyp";
+	let token = "id";
 
 	spotifyApi.clientCredentialsGrant()
 		.then((playlist) => {
