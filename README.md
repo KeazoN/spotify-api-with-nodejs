@@ -17,7 +17,7 @@ This project was made to tell you everything we use in Spotify through an exampl
 
 #### Running the Program
 
-```http
+```cmd
   npm install
 ```
 
