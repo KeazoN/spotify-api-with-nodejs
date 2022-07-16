@@ -9,8 +9,11 @@
   "author": "Uğur Mercan",
   "license": "MIT",
   "dependencies": {
+    "canvas": "^2.9.3",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
+    "extract-colors": "^1.1.22",
+    "node-fetch": "^2.6.7",
     "spotify-web-api-node": "^5.0.2",
     "util": "^0.12.4"
   }

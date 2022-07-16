@@ -1,6 +1,7 @@
 const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
 const fetch = require('node-fetch');
+const {extractColors} = require('extract-colors');
 const app = express();
 const { client_id, client_secret, redirect_uri } = require('./tokens')
 const spotifyApi = new SpotifyWebApi({
@@ -9,12 +10,9 @@ const spotifyApi = new SpotifyWebApi({
 	redirectUri: redirect_uri
 });
 const scopes = [
-	'ugc-image-upload',
 	'user-read-playback-state',
 	'user-modify-playback-state',
 	'user-read-currently-playing',
-	'streaming',
-	'app-remote-control',
 	'user-read-email',
 	'user-read-private',
 	'playlist-read-collaborative',
@@ -59,7 +57,7 @@ app.get('/callback', (req, res) => {
 			spotifyApi.setAccessToken(access_token);
 			spotifyApi.setRefreshToken(refresh_token);
 
-			res.redirect("http://localhost:8888/me");
+			res.redirect("/me");
 
 			setInterval(async () => {
 				const data = await spotifyApi.refreshAccessToken();
@@ -139,14 +137,14 @@ async function getPlaylist(playlist) {
 }
 
 app.get('/me', async (req, res) => {
-	global.totalData = [];
-
 	let userDataFunc = await spotifyApi.getMe();
 	let userListening = await spotifyApi.getMyCurrentPlayingTrack();
 	let userPlaylistFunc = await spotifyApi.getUserPlaylists(userDataFunc.body.id)
-	console.log(userListening)
 	userPlaylistFunc.body.items = userPlaylistFunc.body.items.filter(x => x.tracks.total > 0);
-	res.render('user', { playlist: userPlaylistFunc.body, user: userDataFunc.body, listen: userListening });
+	const color = userListening.body.item.album.images[0].url;
+	extractColors(color).then((colorHex) => {
+		res.render('user', {playlist: userPlaylistFunc.body, user: userDataFunc.body, listen: userListening.body, color: colorHex});
+	});
 });
 
 app.get('/user/:id', async (req, res) => {
@@ -159,7 +157,7 @@ app.get('/user/:id', async (req, res) => {
 });
 
 app.get('/playlist/:id', async (req, res, next) => {
-	await getPlaylist(req.params.id)
+	await getPlaylist(req.query.id)
 		.then(async (data) => {
 			res.render('playlist', { data: data, songs: await getPlaylistTracks(data.id, { offset: 0, pagesize: 100 }) });
 		})
@@ -168,4 +166,4 @@ app.get('/playlist/:id', async (req, res, next) => {
 		});
 })
 
-app.listen(8888);
+app.listen(5000);

@@ -2,7 +2,22 @@
 
 <div class="container">
 	<div class="cards">
-		<div class="card">
+		<% if(listen.is_playing == true) { %>
+                <div class="spotify" style="background: <%- color[0].hex %> ;">
+                    <div class="left">
+                        <div class="song-image"><div class="effect" style="background: linear-gradient(90deg, rgba(0,0,0,0) 0%, <%- color[0].hex %> 80%);"></div><img src=<%= listen.item.album.images[0].url %>></div>
+                        <div class="song-content">
+                            <h1><a target="_blank" href=<%= listen.item.external_urls.spotify %>> <%- listen.item.name %> </a></h1>
+                            <h5><a target="_blank" href=<%= listen.item.album.artists[0].external_urls.spotify %>> <%- listen.item.album.artists[0].name %> </a></h5>
+                            <p>Şu Anda Dinliyor... <i class="fa fa-headphones"></i></p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                </div>
+            <% } %>
+		<div class="card" style=<% if (listen.is_playing == true) { %> "border-top-left-radius: 0; border-top-right-radius: 0;"<% } %> >
 			<div class="image">
 				<img src=<%= user.images[0].url %>>
 			</div>
@@ -10,7 +25,7 @@
 				<h1><%- user.display_name %></h1>
 			</div>
 			<div class="description">
-				<h3>Followers: <strong><%- user.followers.total %></strong>  <%- user.product ? user.product === "premium" ? "Premium: ✔️" : "Premium: ❌" : "" %></h3>
+				<h3>Followers: <strong><%- user.followers.total %></strong>
 			</div>
 			<div class="music-cards">
 				<% playlist.items.forEach((index) => { %>
