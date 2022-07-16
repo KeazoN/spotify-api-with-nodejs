@@ -246,11 +246,50 @@ a{
 	flex-direction: column;
 	gap: 3rem 0;
 	width: 40%;
+	position: relative;
+	background-color: #212121;
 }
 
 .sidebar-header i{
 	font-size: 5em;
 	color: #fff;
+}
+
+.users{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.users img:first-child{
+	position: relative;
+	left: 2rem;
+	width: 110px;
+	height: 110px;
+	z-index: 1;
+}
+
+.users img:last-child{
+	position: relative;
+	right: 2rem;
+	width: 110px;
+	height: 110px;
+	z-index: 1;
+}
+
+.users img{
+	width: 140px;
+	height: 140px;
+	z-index: 2;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	border: 8px solid #212121;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.sidebar-center{
+	margin-bottom: 5rem;
 }
 
 .sidebar-center button{
