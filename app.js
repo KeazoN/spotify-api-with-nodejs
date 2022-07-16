@@ -2,6 +2,7 @@ const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
 const fetch = require('node-fetch');
 const {extractColors} = require('extract-colors');
+const bodyParser = require('body-parser');
 const app = express();
 const { client_id, client_secret, redirect_uri } = require('./tokens')
 const spotifyApi = new SpotifyWebApi({
@@ -9,6 +10,7 @@ const spotifyApi = new SpotifyWebApi({
 	clientSecret: client_secret,
 	redirectUri: redirect_uri
 });
+app.use(bodyParser.urlencoded({ extended: true }));
 const scopes = [
 	'user-read-playback-state',
 	'user-modify-playback-state',
@@ -157,7 +159,7 @@ app.get('/user/:id', async (req, res) => {
 });
 
 app.get('/playlist/:id', async (req, res, next) => {
-	await getPlaylist(req.query.id)
+	await getPlaylist(req.params.id)
 		.then(async (data) => {
 			res.render('playlist', { data: data, songs: await getPlaylistTracks(data.id, { offset: 0, pagesize: 100 }) });
 		})
