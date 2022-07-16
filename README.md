@@ -21,9 +21,6 @@ This project was made to tell you everything we use in Spotify through an exampl
   npm install
 ```
 
-  
-## Special Thanks
-- [@BilalTaner](https://github.com/BilalTaner) for development.
 
 ## Contribution
 
@@ -41,3 +38,7 @@ Please follow the 'code of conduct' of this project.
 
   
 ![Logo](https://i.hizliresim.com/k7ebs59.png)
+
+
+## Special Thanks
+- [@BilalTaner](https://github.com/BilalTaner) for development.
