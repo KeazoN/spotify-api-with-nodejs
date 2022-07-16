@@ -64,8 +64,6 @@ app.get('/callback', (req, res) => {
 			setInterval(async () => {
 				const data = await spotifyApi.refreshAccessToken();
 				const access_token = data.body['access_token'];
-				console.log('The access token has been refreshed!');
-				console.log('access_token:', access_token);
 				spotifyApi.setAccessToken(access_token);
 			}, expires_in / 2 * 1000);
 		})
@@ -155,7 +153,7 @@ app.get('/user/:id', async (req, res) => {
 	let userPlaylistFunc = await spotifyApi.getUserPlaylists(userDataFunc.body.id)
 	userPlaylistFunc.body.items = userPlaylistFunc.body.items.filter(x => x.tracks.total > 0);
 
-	res.render('user', { playlist: userPlaylistFunc.body, user: userDataFunc.body });
+	res.render('user', { playlist: userPlaylistFunc.body, user: userDataFunc.body, listen: totalData});
 });
 
 app.get('/playlist/:id', async (req, res, next) => {
