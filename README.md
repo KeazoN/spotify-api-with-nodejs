@@ -11,9 +11,9 @@ This project was made to tell you everything we use in Spotify through an exampl
 
 | Parametre | Tip     | Açıklama                |
 | :-------- | :------- | :------------------------- |
-| `client_id` | `string` | **Gerekli**. ID provided to you by Developer Spotify. |
-| `client_secret` | `string` | **Gerekli**. The (top secret) Secret, brought to you by Developer Spotify. |
-| `redirect_uri` | `string` | **Gerekli**. The callback URL you need to add in the Developer Spotify section. |
+| `client_id` | `string` | **Required**. ID provided to you by Developer Spotify. |
+| `client_secret` | `string` | **Required**. The (top secret) Secret, brought to you by Developer Spotify. |
+| `redirect_uri` | `string` | **Required**. The callback URL you need to add in the Developer Spotify section. |
 
 #### Running the Program
 
