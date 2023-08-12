@@ -1,0 +1,48 @@
+<%- include('inc/header') %>
+<%
+	function millisToMinutesAndSeconds(millis) {
+		var minutes = Math.floor(millis / 60000);
+		var seconds = ((millis % 60000) / 1000).toFixed(0);
+		return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+	}
+%>
+<div class="container">
+	<div class="cards">
+		<div class="card">
+			<div class="image">
+				<img src=<%= data.images[0].url %>>
+			</div>
+			<h5 class="owner"><a href="/user/<%- data.owner.id %>">Created:  <%- data.owner.display_name %> </a></h5>
+			<div class="name">
+				<h1><%- data.name %></h1>
+			</div>
+			<div class="description">
+				<h3><%- data.description %></h3>
+			</div>
+			<div class="music-cards">
+				<% songs.filter(element => { return element.track !== null; }).forEach((index, i) => { %>
+					<div class="all-cards">
+						<a href=<%= index.track.external_urls.spotify || data.owner.external_urls.spotify %>>
+						<div class="music-card">
+							<div class="left">
+								<div class="number"><%- i + 1 %></div>
+								<div class="music-image"><img src=<%= index.track.album.images[0].url %>></div>
+								<div class="music-name-artist">
+									<h3><%- index.track.name %></h3>
+									<h5><%- index.track.album.artists[0].name%></h5>
+								</div>
+							</div>
+							<div class="right">
+								<div class="time">
+									<p><%- millisToMinutesAndSeconds(index.track.duration_ms) %></p>
+								</div>
+							</div>
+						</div>
+					</a>
+					</div>
+				<% }); %>			
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('inc/footer') %>

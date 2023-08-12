@@ -1,0 +1,60 @@
+<%- include('inc/header') %>
+
+<div class="container">
+	<div class="cards">
+		<% if(listen.is_playing == true) { %>
+                <div class="spotify" style="background: <%- color[0].hex %> ;">
+                    <div class="left">
+                        <div class="song-image"><div class="effect" style="background: linear-gradient(90deg, rgba(0,0,0,0) 0%, <%- color[0].hex %> 80%);"></div><img src=<%= listen.item.album.images[0].url %>></div>
+                        <div class="song-content">
+                            <h1><a target="_blank" style="color: <%- logoColor  %>" href=<%= listen.item.external_urls.spotify %>> <%- listen.item.name %> </a></h1>
+                            <h5><a target="_blank" style="color: <%- logoColor  %>" href=<%= listen.item.album.artists[0].external_urls.spotify %>> <%- listen.item.album.artists[0].name %> </a></h5>
+                            <p style="color: <%- logoColor  %>">Listening... <i class="fa fa-headphones"></i></p>
+                        </div>
+                    </div>
+                    <div class="right" style="color: <%- logoColor  %>">
+                        <i class="fab fa-spotify" style="color: <%- logoColor  %>"></i>
+                    </div>
+                </div>
+            <% } %>
+		<div class="card" style=<% if (listen.is_playing == true) { %> "border-top-left-radius: 0; border-top-right-radius: 0;"<% } %> >
+			<div class="image">
+				<% if (user.images && user.images[0] && user.images[0].url) { %>
+					<img src="<%= user.images[0].url %>">
+				  <% } else { %>
+					<img src="https://i.scdn.co/image/ab6775700000ee857e2873dc9b044b95f2f76761">
+				  <% } %>
+			</div>
+			<div class="name display">
+				<h1><%- user.display_name %></h1>
+			</div>
+			<div class="description">
+				<h3>Followers: <strong><%- user.followers.total %></strong>
+			</div>
+			<div class="music-cards">
+				<% playlist.items.forEach((index) => { %>
+					<div class="all-cards">
+						<a href="/playlist/<%- index.id %>">
+						<div class="music-card">
+							<div class="left">
+								<div class="number"><%- index.popularity %></div>
+								<div class="music-image"><img src=<%= index.images[0].url %>></div>
+								<div class="music-name-artist">
+									<h3><%- index.name%></h3>
+									<h5><%- index.owner.display_name%></h5>
+								</div>
+							</div>
+							<div class="right">
+								<div class="time">
+									<p><%- index.tracks.total %></p>
+								</div>
+							</div>
+						</div>
+					</a>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('inc/footer') %>

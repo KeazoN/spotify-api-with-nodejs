@@ -1,0 +1,21 @@
+{
+  "name": "spotify-playlist-api",
+  "version": "0.0.1",
+  "description": "It is made to show anyone's Spotify playlist in any web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Uğur Mercan",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "extract-colors": "^1.1.22",
+    "node-fetch": "^2.6.7",
+    "spotify-web-api-node": "^5.0.2",
+    "tinycolor2": "^1.4.2",
+    "util": "^0.12.4"
+  }
+}

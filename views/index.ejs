@@ -1,0 +1,29 @@
+<%- include('inc/header') %>
+
+<div class="spotify-login">
+  <div class="container-full">
+    <div class="spotify-login-img">
+      <img src="img/login-wallpaper.png">
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="sidebar-center">
+        <div class="users">
+          <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1085&q=80">
+          <img src="https://images.unsplash.com/photo-1584635234347-ce88034d9501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80">
+          <img src="https://images.unsplash.com/photo-1594434533760-02e0f3faaa68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bGlzdGVuaW5nJTIwdG8lMjBtdXNpY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+        </div>
+        <form action="/login">
+          <button type="submit"><i class="fab fa-spotify"></i> Login Spotify</button>
+        </form>
+      </div>
+      <div class="sidebar-footer">
+        <p>It does not have any partnership or contract with Spotify. <a href="https://github.com/keazon/spotify-api-nodejs">It is open source.</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('inc/footer') %>
